@@ -1,14 +1,16 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
+import { Code, Database, Server, Cpu, Lightbulb, Users } from 'lucide-react';
 
 const skills = [
-  { name: "Python", level: 85 },
-  { name: "Java", level: 80 },
-  { name: "JavaScript", level: 75 },
-  { name: "SQL", level: 70 },
-  { name: "Problem Solving", level: 90 },
-  { name: "Team Leadership", level: 85 },
+  { name: "Python", level: 85, icon: <Code className="w-5 h-5" /> },
+  { name: "Java", level: 80, icon: <Server className="w-5 h-5" /> },
+  { name: "JavaScript", level: 75, icon: <Cpu className="w-5 h-5" /> },
+  { name: "SQL", level: 70, icon: <Database className="w-5 h-5" /> },
+  { name: "Problem Solving", level: 90, icon: <Lightbulb className="w-5 h-5" /> },
+  { name: "Team Leadership", level: 85, icon: <Users className="w-5 h-5" /> },
 ];
 
 const tools = [
@@ -20,6 +22,7 @@ const tools = [
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -74,8 +77,9 @@ const About = () => {
                 {tools.map((tool, index) => (
                   <div 
                     key={index}
-                    className="glass-card px-4 py-2 rounded-lg text-white"
+                    className="glass-card px-4 py-3 rounded-lg text-white flex items-center gap-2 hover:bg-highlight/20 transition-all duration-300 transform hover:scale-105"
                   >
+                    <span className="text-xl">{tool.icon}</span>
                     {tool.name}
                   </div>
                 ))}
@@ -87,23 +91,35 @@ const About = () => {
             "transition-all duration-1000 delay-300 transform",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           )}>
-            <h3 className="text-2xl font-semibold text-white mb-6">My Skills</h3>
+            <h3 className="text-2xl font-semibold text-white mb-8">My Skills</h3>
             
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {skills.map((skill, index) => (
-                <div key={index} className="space-y-2">
-                  <div className="flex justify-between">
-                    <span className="text-white font-medium">{skill.name}</span>
-                    <span className="text-gray-400">{skill.level}%</span>
+                <div 
+                  key={index} 
+                  className="glass-card p-6 rounded-xl hover:bg-highlight/10 transition-all duration-300 transform hover:scale-105 cursor-pointer"
+                  onMouseEnter={() => setHoveredSkill(skill.name)}
+                  onMouseLeave={() => setHoveredSkill(null)}
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 rounded-full bg-highlight/20 text-highlight">
+                      {skill.icon}
+                    </div>
+                    <h4 className="text-white font-medium">{skill.name}</h4>
                   </div>
                   <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
                     <div 
-                      className="h-full bg-gradient-to-r from-highlight to-highlight-dark rounded-full transition-all duration-1000 ease-out"
+                      className={`h-full rounded-full transition-all duration-1000 ease-out ${hoveredSkill === skill.name ? 'bg-highlight' : 'bg-gradient-to-r from-highlight to-highlight-dark'}`}
                       style={{ 
                         width: isVisible ? `${skill.level}%` : '0%',
                         transitionDelay: `${index * 100}ms`
                       }}
                     ></div>
+                  </div>
+                  <div className="mt-2 flex justify-between items-center">
+                    <span className="text-sm text-gray-400">Beginner</span>
+                    <span className="text-sm text-gray-400 font-bold">{skill.level}%</span>
+                    <span className="text-sm text-gray-400">Expert</span>
                   </div>
                 </div>
               ))}
