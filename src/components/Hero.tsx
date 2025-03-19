@@ -46,15 +46,15 @@ const Hero = () => {
           </div>
           
           <div className="w-full lg:w-1/2 relative opacity-0 animate-slideInRight animate-delay-300">
-            {/* Hero image with subtle glow effect */}
-            <div className="w-full h-full max-w-lg mx-auto relative">
-              {/* Subtle glow behind the image */}
-              <div className="absolute -inset-4 bg-highlight/10 blur-3xl rounded-full"></div>
+            {/* Hero image with enhanced sizing and glow effect */}
+            <div className="w-full h-full mx-auto relative">
+              {/* Enhanced glow behind the image */}
+              <div className="absolute -inset-4 bg-highlight/20 blur-3xl rounded-full"></div>
               
               <img 
                 src="/lovable-uploads/1bd83404-309d-45b9-888b-a40c0e59b6fd.png" 
                 alt="Suhas B S" 
-                className="w-full h-auto object-contain relative z-10 scale-110 transform-gpu"
+                className="w-full h-auto object-contain relative z-10 scale-125 transform-gpu"
               />
             </div>
           </div>
