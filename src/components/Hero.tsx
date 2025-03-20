@@ -2,9 +2,11 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     setIsLoaded(true);
@@ -45,7 +47,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="w-full lg:w-1/2 relative opacity-0 animate-slideInRight animate-delay-300">
+          <div className={`w-full lg:w-1/2 relative opacity-0 animate-slideInRight animate-delay-300 ${isMobile ? 'mt-10' : ''}`}>
             {/* Hero image with enhanced sizing and glow effect */}
             <div className="w-full h-full mx-auto relative">
               {/* Enhanced glow behind the image */}
@@ -54,7 +56,7 @@ const Hero = () => {
               <img 
                 src="/lovable-uploads/1bd83404-309d-45b9-888b-a40c0e59b6fd.png" 
                 alt="Suhas B S" 
-                className="w-full h-auto object-contain relative z-10 scale-125 transform-gpu"
+                className="w-full h-auto object-contain relative z-10 scale-150 transform-gpu" 
               />
             </div>
           </div>

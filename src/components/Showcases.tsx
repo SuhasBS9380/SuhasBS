@@ -6,24 +6,45 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with user authentication, product catalog, and payment integration.",
-    image: "https://placehold.co/600x400/111111/FFFFFF?text=E-Commerce+Platform",
-    tags: ["React", "Node.js", "MongoDB"]
+    title: "Accessible and Inclusive",
+    description: "A web application focused on creating accessible and inclusive digital experiences for all users.",
+    image: "https://placehold.co/600x400/111111/FFFFFF?text=Accessible+and+Inclusive",
+    tags: ["Node.js", "React", "API", "HTML", "Tailwind CSS", "JavaScript"]
   },
   {
     id: 2,
-    title: "Data Visualization Dashboard",
-    description: "Interactive dashboard for visualizing complex datasets with customizable charts and filters.",
-    image: "https://placehold.co/600x400/111111/FFFFFF?text=Data+Dashboard",
-    tags: ["Python", "D3.js", "SQL"]
+    title: "Image Deblurring Prism Project",
+    description: "An AI-powered solution that uses machine learning techniques to restore and enhance blurry images.",
+    image: "https://placehold.co/600x400/111111/FFFFFF?text=Image+Deblurring",
+    tags: ["TensorFlow", "Python", "AI Libraries"]
   },
   {
     id: 3,
-    title: "AI-Powered Chatbot",
-    description: "Intelligent conversational agent built to assist users with common queries and tasks.",
-    image: "https://placehold.co/600x400/111111/FFFFFF?text=AI+Chatbot",
-    tags: ["Python", "TensorFlow", "NLP"]
+    title: "E-Commerce Website (Offer Mania)",
+    description: "A feature-rich e-commerce platform with special focus on promotional offers and user engagement.",
+    image: "https://placehold.co/600x400/111111/FFFFFF?text=Offer+Mania",
+    tags: ["React", "Node.js", "MongoDB", "Express"]
+  },
+  {
+    id: 4,
+    title: "Data Visualization Project",
+    description: "Interactive data visualization tools for analyzing and presenting complex datasets in an intuitive manner.",
+    image: "https://placehold.co/600x400/111111/FFFFFF?text=Data+Visualization",
+    tags: ["Matplotlib", "Seaborn", "Python", "Flask"]
+  },
+  {
+    id: 5,
+    title: "DSA LeetCode Problem Solving",
+    description: "A collection of algorithmic solutions to complex programming challenges, demonstrating problem-solving skills.",
+    image: "https://placehold.co/600x400/111111/FFFFFF?text=DSA+Solutions",
+    tags: ["Python", "Java", "Data Structures", "Algorithms"]
+  },
+  {
+    id: 6,
+    title: "Constro Tech Interior Website",
+    description: "A modern website for an interior design company with portfolio showcase and client interaction features.",
+    image: "https://placehold.co/600x400/111111/FFFFFF?text=Constro+Tech",
+    tags: ["Node.js", "HTML", "Render", "Hostinger", "JavaScript"]
   }
 ];
 
