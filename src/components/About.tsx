@@ -102,7 +102,7 @@ const About = () => {
               <img 
                 src="/lovable-uploads/1bd83404-309d-45b9-888b-a40c0e59b6fd.png" 
                 alt="Suhas B S" 
-                className="w-4/5 h-4/5 object-contain relative z-10"
+                className="w-full h-full object-cover relative z-10"
               />
             </div>
           </div>

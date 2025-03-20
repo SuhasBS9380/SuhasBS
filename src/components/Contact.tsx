@@ -1,8 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { 
   Linkedin, 
-  Twitter, 
   Instagram, 
   Mail, 
   ExternalLink, 
@@ -14,25 +12,19 @@ import { Button } from '@/components/ui/button';
 const socialLinks = [
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/',
+    url: 'https://www.linkedin.com/in/suhas-b-s-01500427a',
     icon: <Linkedin className="h-5 w-5" />,
     ariaLabel: 'LinkedIn Profile'
   },
   {
-    name: 'Twitter',
-    url: 'https://twitter.com/',
-    icon: <Twitter className="h-5 w-5" />,
-    ariaLabel: 'Twitter Profile'
-  },
-  {
     name: 'Instagram',
-    url: 'https://instagram.com/',
+    url: 'https://www.instagram.com/suhas_rock_1/',
     icon: <Instagram className="h-5 w-5" />,
     ariaLabel: 'Instagram Profile'
   },
   {
     name: 'GitHub',
-    url: 'https://github.com/',
+    url: 'https://github.com/SuhasBS9380',
     icon: <Github className="h-5 w-5" />,
     ariaLabel: 'GitHub Profile'
   }
@@ -97,7 +89,7 @@ const Contact = () => {
             <div className="my-8 border-t border-gray-800"></div>
 
             <a 
-              href="mailto:yourname@gmail.com"
+              href="mailto:suhasbs229@gmail.com"
               className="flex items-center justify-center space-x-2 bg-highlight hover:bg-highlight-dark text-white rounded-lg px-6 py-4 transition-all w-full"
             >
               <Mail className="h-5 w-5" />
