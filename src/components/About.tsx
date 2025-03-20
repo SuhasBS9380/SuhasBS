@@ -71,7 +71,7 @@ const About = () => {
           </h2>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-12 items-start">
+        <div className="flex flex-col-reverse sm:flex-row gap-12 items-start">
           <div className={cn(
             "w-full sm:w-3/5 transition-all duration-1000 transform",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -102,7 +102,7 @@ const About = () => {
               <img 
                 src="/lovable-uploads/1bd83404-309d-45b9-888b-a40c0e59b6fd.png" 
                 alt="Suhas B S" 
-                className="w-3/4 h-auto object-contain relative z-10"
+                className="w-4/5 h-4/5 object-contain relative z-10"
               />
             </div>
           </div>
