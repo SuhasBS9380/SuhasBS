@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
-import { Code, Database, Server, Cpu, Lightbulb, Users } from 'lucide-react';
 
 const skills = [
   { name: "Python", icon: "🐍", color: "#8B5CF6" },
@@ -72,9 +71,9 @@ const About = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="flex flex-col sm:flex-row gap-12 items-start">
           <div className={cn(
-            "transition-all duration-1000 transform",
+            "w-full sm:w-3/5 transition-all duration-1000 transform",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           )}>
             <h3 className="text-2xl font-semibold text-white mb-6">Who I Am</h3>
@@ -95,10 +94,10 @@ const About = () => {
           </div>
 
           <div className={cn(
-            "transition-all duration-1000 delay-300 transform",
+            "w-full sm:w-2/5 transition-all duration-1000 delay-300 transform",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           )}>
-            <div className="relative w-full aspect-square rounded-full bg-black border-4 border-highlight/20 flex items-center justify-center overflow-hidden">
+            <div className="relative w-full max-w-[250px] mx-auto aspect-square rounded-full bg-black border-4 border-highlight/20 flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-b from-black via-highlight/5 to-black/80"></div>
               <img 
                 src="/lovable-uploads/1bd83404-309d-45b9-888b-a40c0e59b6fd.png" 

@@ -18,8 +18,8 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-tr from-black via-black/95 to-highlight/10 opacity-80"></div>
       
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-          <div className={`w-full lg:w-1/2 ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000 ease-in-out`}>
+        <div className="flex flex-row items-center justify-between gap-4 sm:gap-8">
+          <div className={`w-1/2 ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000 ease-in-out`}>
             <div className="space-y-6">
               <div className="opacity-0 animate-slideUp animate-delay-100">
                 <div className="inline-block px-3 py-1 rounded-full bg-highlight/10 text-highlight text-sm font-medium mb-4">
@@ -47,7 +47,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className={`w-full lg:w-1/2 relative opacity-0 animate-slideInRight animate-delay-300 ${isMobile ? 'mt-10' : ''}`}>
+          <div className={`w-1/2 relative opacity-0 animate-slideInRight animate-delay-300`}>
             {/* Hero image with enhanced sizing and glow effect */}
             <div className="w-full h-full mx-auto relative">
               {/* Enhanced glow behind the image */}
