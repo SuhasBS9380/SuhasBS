@@ -64,20 +64,35 @@ const About = () => {
 
   return (
     <section id="about" className="py-20 bg-black">
-      <div className="container mx-auto px-6 md:px-12">
+      <div className="container mx-auto px-4 md:px-12">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-white font-montserrat">
             About <span className="text-gradient">Me</span>
           </h2>
         </div>
 
-        <div className="flex flex-col-reverse sm:flex-row gap-12 items-start">
+        <div className="flex flex-col sm:flex-row gap-12 items-center sm:items-start">
+          {/* Image appears first on mobile, side by side on larger screens */}
           <div className={cn(
-            "w-full sm:w-3/5 transition-all duration-1000 transform",
+            "w-full sm:w-2/5 transition-all duration-1000 delay-300 transform order-1 sm:order-2",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           )}>
-            <h3 className="text-2xl font-semibold text-white mb-6">Who I Am</h3>
-            <div className="space-y-4 text-gray-300">
+            <div className="relative w-full max-w-[200px] mx-auto aspect-square rounded-full bg-black border-4 border-highlight/20 flex items-center justify-center overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-b from-black via-highlight/5 to-black/80"></div>
+              <img 
+                src="/lovable-uploads/1bd83404-309d-45b9-888b-a40c0e59b6fd.png" 
+                alt="Suhas B S" 
+                className="w-full h-full object-cover relative z-10"
+              />
+            </div>
+          </div>
+
+          <div className={cn(
+            "w-full sm:w-3/5 transition-all duration-1000 transform order-2 sm:order-1",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          )}>
+            <h3 className="text-2xl font-semibold text-white mb-6 font-montserrat">Who I Am</h3>
+            <div className="space-y-4 text-gray-300 font-montserrat">
               <p>
                 With a passion for exploring the dynamic intersection of technology and creativity, I am currently advancing my skills as a student at the Cambridge Institute of Technology, Bangalore. This institution is renowned for cultivating the next generation of tech innovators.
               </p>
@@ -92,24 +107,10 @@ const About = () => {
               </p>
             </div>
           </div>
-
-          <div className={cn(
-            "w-full sm:w-2/5 transition-all duration-1000 delay-300 transform",
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          )}>
-            <div className="relative w-full max-w-[250px] mx-auto aspect-square rounded-full bg-black border-4 border-highlight/20 flex items-center justify-center overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-b from-black via-highlight/5 to-black/80"></div>
-              <img 
-                src="/lovable-uploads/1bd83404-309d-45b9-888b-a40c0e59b6fd.png" 
-                alt="Suhas B S" 
-                className="w-full h-full object-cover relative z-10"
-              />
-            </div>
-          </div>
         </div>
 
         <div className="mt-16">
-          <h3 className="text-2xl font-semibold text-white mb-8">My Skills</h3>
+          <h3 className="text-2xl font-semibold text-white mb-8 font-montserrat">My Skills</h3>
           {isVisible && (
             <motion.div 
               className="flex flex-wrap gap-4"
@@ -125,7 +126,7 @@ const About = () => {
                   style={{ borderLeft: `3px solid ${skill.color}` }}
                 >
                   <span className="text-2xl">{skill.icon}</span>
-                  <span className="text-white font-medium">{skill.name}</span>
+                  <span className="text-white font-medium font-montserrat">{skill.name}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -133,7 +134,7 @@ const About = () => {
         </div>
 
         <div className="mt-12">
-          <h3 className="text-2xl font-semibold text-white mb-6">Tools</h3>
+          <h3 className="text-2xl font-semibold text-white mb-6 font-montserrat">Tools</h3>
           {isVisible && (
             <motion.div 
               className="flex flex-wrap gap-4"
@@ -149,7 +150,7 @@ const About = () => {
                   style={{ borderLeft: `3px solid ${tool.color}` }}
                 >
                   <span className="text-2xl">{tool.icon}</span>
-                  <span className="text-white font-medium">{tool.name}</span>
+                  <span className="text-white font-medium font-montserrat">{tool.name}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -157,7 +158,7 @@ const About = () => {
         </div>
 
         <div className="mt-12">
-          <h3 className="text-2xl font-semibold text-white mb-6">Projects</h3>
+          <h3 className="text-2xl font-semibold text-white mb-6 font-montserrat">Projects</h3>
           {isVisible && (
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -166,9 +167,9 @@ const About = () => {
               className="glass-card p-6 rounded-xl"
             >
               <div className="flex flex-col space-y-2">
-                <span className="text-highlight font-medium">10+ Projects Completed</span>
-                <p className="text-gray-300">Including web applications, data analysis, and AI implementations</p>
-                <p className="text-gray-400 text-sm mt-2">
+                <span className="text-highlight font-medium font-montserrat">10+ Projects Completed</span>
+                <p className="text-gray-300 font-montserrat">Including web applications, data analysis, and AI implementations</p>
+                <p className="text-gray-400 text-sm mt-2 font-montserrat">
                   I've built a strong foundation through numerous personal and academic projects that demonstrate my technical abilities and problem-solving skills.
                 </p>
               </div>

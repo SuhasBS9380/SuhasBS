@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { 
   Linkedin, 
@@ -52,12 +53,12 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 bg-black">
-      <div className="container mx-auto px-6 md:px-12">
+      <div className="container mx-auto px-4 md:px-12">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-white font-montserrat">
             Get in <span className="text-gradient">Touch</span>
           </h2>
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+          <p className="text-gray-400 mt-4 max-w-2xl mx-auto font-montserrat">
             Interested in working together or have a question? Feel free to reach out!
           </p>
         </div>
@@ -79,7 +80,7 @@ const Contact = () => {
                 >
                   <div className="flex items-center space-x-3">
                     {link.icon}
-                    <span className="text-white">{link.name}</span>
+                    <span className="text-white font-montserrat">{link.name}</span>
                   </div>
                   <ExternalLink className="h-4 w-4 text-gray-500" />
                 </a>
@@ -90,7 +91,7 @@ const Contact = () => {
 
             <a 
               href="mailto:suhasbs229@gmail.com"
-              className="flex items-center justify-center space-x-2 bg-highlight hover:bg-highlight-dark text-white rounded-lg px-6 py-4 transition-all w-full"
+              className="flex items-center justify-center space-x-2 bg-highlight hover:bg-highlight-dark text-white rounded-lg px-6 py-4 transition-all w-full font-montserrat"
             >
               <Mail className="h-5 w-5" />
               <span>Send Email</span>
