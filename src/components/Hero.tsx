@@ -13,13 +13,14 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden bg-black">
+    <section id="home" className="relative min-h-[100dvh] flex items-center py-8 overflow-hidden bg-black">
       {/* Subtle gradient background for better image visibility */}
       <div className="absolute inset-0 bg-gradient-to-tr from-black via-black/95 to-highlight/10 opacity-80"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-8">
-          <div className={`w-full sm:w-1/2 ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000 ease-in-out`}>
+        <div className="flex flex-col-reverse xs:flex-col sm:flex-row items-center justify-between gap-4 sm:gap-8">
+          {/* Content section - reversed on extra small screens */}
+          <div className={`w-full sm:w-1/2 ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000 ease-in-out mt-6 xs:mt-0`}>
             <div className="space-y-4 sm:space-y-6">
               <div className="opacity-0 animate-slideUp animate-delay-100">
                 <div className="inline-block px-3 py-1 rounded-full bg-highlight/10 text-highlight text-sm font-medium mb-4">
@@ -47,9 +48,10 @@ const Hero = () => {
             </div>
           </div>
           
+          {/* Image section - comes first on extra small screens */}
           <div className={`w-full sm:w-1/2 relative opacity-0 animate-slideInRight animate-delay-300 flex justify-center sm:justify-end`}>
             {/* Hero image with enhanced sizing and glow effect */}
-            <div className="w-full max-w-[300px] sm:max-w-full h-full mx-auto relative">
+            <div className="w-full max-w-[250px] xs:max-w-[300px] sm:max-w-full h-full mx-auto relative">
               {/* Enhanced glow behind the image */}
               <div className="absolute -inset-4 bg-highlight/20 blur-3xl rounded-full"></div>
               
