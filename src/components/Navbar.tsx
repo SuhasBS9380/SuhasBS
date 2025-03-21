@@ -27,10 +27,22 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scrolling when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   return (
     <nav 
       className={cn(
-        "fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4",
+        "fixed top-0 left-0 w-full z-50 transition-all duration-300 px-4 sm:px-6 md:px-12 py-3",
         scrolled ? "bg-black/80 backdrop-blur-lg" : "bg-transparent"
       )}
     >
@@ -67,20 +79,31 @@ const Navbar = () => {
       {/* Mobile Navigation Menu */}
       <div 
         className={cn(
-          "fixed inset-0 z-40 bg-black/90 backdrop-blur-lg flex flex-col justify-center items-center space-y-8 transition-all duration-500 ease-in-out md:hidden",
+          "fixed inset-0 z-40 bg-black/90 backdrop-blur-lg flex flex-col justify-start pt-20 items-center overflow-y-auto transition-all duration-500 ease-in-out md:hidden",
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
       >
-        {navItems.map((item) => (
-          <a
-            key={item.name}
-            href={item.href}
-            className="text-white text-2xl font-medium hover:text-highlight transition-colors duration-300"
-            onClick={() => setIsOpen(false)}
-          >
-            {item.name}
-          </a>
-        ))}
+        {/* Close button at the top */}
+        <button 
+          className="absolute top-4 right-4 text-white p-2"
+          onClick={() => setIsOpen(false)}
+          aria-label="Close menu"
+        >
+          <X size={28} />
+        </button>
+        
+        <div className="flex flex-col items-center space-y-8 py-8 w-full">
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-white text-2xl font-medium hover:text-highlight transition-colors duration-300"
+              onClick={() => setIsOpen(false)}
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
       </div>
     </nav>
   );
