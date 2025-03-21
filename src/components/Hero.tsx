@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronRight, X } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const Hero = () => {
@@ -13,13 +13,13 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-[80vh] flex items-center pb-6 overflow-hidden bg-black">
+    <section id="home" className="relative min-h-[80vh] flex items-center pt-16 xs:pt-20 pb-6 overflow-hidden bg-black">
       {/* Subtle gradient background for better image visibility */}
       <div className="absolute inset-0 bg-gradient-to-tr from-black via-black/95 to-highlight/10 opacity-80"></div>
       
       <div className="container mx-auto px-4 md:px-12 relative z-10">
-        <div className="flex flex-col-reverse xs:flex-row items-center justify-between gap-4 sm:gap-8">
-          <div className={`xs:w-1/2 w-full mt-4 xs:mt-0 text-center xs:text-left ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000 ease-in-out`}>
+        <div className="flex flex-col items-center justify-between gap-4 sm:gap-8 xs:flex-row">
+          <div className={`order-last xs:order-first xs:w-1/2 w-full mt-4 xs:mt-0 text-center xs:text-left ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000 ease-in-out`}>
             <div className="space-y-4 sm:space-y-6">
               <div className="opacity-0 animate-slideUp animate-delay-100">
                 <div className="inline-block px-3 py-1 rounded-full bg-highlight/10 text-highlight text-xs sm:text-sm font-medium mb-2 sm:mb-4">
@@ -47,7 +47,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className={`xs:w-1/2 w-full mb-4 xs:mb-0 opacity-0 animate-slideInRight animate-delay-300`}>
+          <div className={`order-first xs:order-last xs:w-1/2 w-full mb-4 xs:mb-0 opacity-0 animate-slideInRight animate-delay-300`}>
             {/* Hero image with enhanced sizing and glow effect */}
             <div className="w-full max-w-xs sm:max-w-md mx-auto xs:mx-0 xs:ml-auto relative">
               {/* Enhanced glow behind the image */}
@@ -56,7 +56,7 @@ const Hero = () => {
               <img 
                 src="/lovable-uploads/1bd83404-309d-45b9-888b-a40c0e59b6fd.png" 
                 alt="Suhas B S" 
-                className="w-full h-auto object-contain relative z-10 transform-gpu scale-125 sm:scale-150" 
+                className="w-full h-auto object-contain relative z-10 transform-gpu scale-100 sm:scale-125 lg:scale-150" 
               />
             </div>
           </div>
