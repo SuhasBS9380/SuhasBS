@@ -22,20 +22,20 @@ const Hero = () => {
           <div className={`order-last xs:order-first xs:w-1/2 w-full mt-4 xs:mt-0 text-center xs:text-left ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000 ease-in-out`}>
             <div className="space-y-4 sm:space-y-6">
               <div className="opacity-0 animate-slideUp animate-delay-100">
-                <div className="inline-block px-3 py-1 rounded-full bg-highlight/10 text-highlight text-xs sm:text-sm font-medium mb-2 sm:mb-4">
+                <div className="inline-block px-3 py-1 rounded-full bg-highlight/10 text-highlight text-sm font-poppins">
                   Hello, I'm
                 </div>
               </div>
               
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight opacity-0 animate-slideUp animate-delay-200">
-                Suhas <span className="text-gradient">B S</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight opacity-0 animate-slideUp animate-delay-200">
+                <span className="font-dancing-script">Suhas</span> <span className="font-dancing-script text-gradient">B S</span>
               </h1>
               
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-300 opacity-0 animate-slideUp animate-delay-300">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-montserrat opacity-0 animate-slideUp animate-delay-300">
                 Student & Technology Enthusiast
               </p>
               
-              <p className="text-sm sm:text-base text-gray-400 max-w-md opacity-0 animate-slideUp animate-delay-400">
+              <p className="text-sm sm:text-base text-gray-400 max-w-md font-poppins opacity-0 animate-slideUp animate-delay-400">
                 Exploring the intersection of technology and creativity to build innovative solutions.
               </p>
               
