@@ -10,13 +10,13 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div>
             <a href="#home" className="font-bold text-xl text-white">
-              Suhas<span className="text-highlight"> B S</span>
+              <span className="font-playfair">Suhas</span><span className="font-dancing-script text-highlight"> B S</span>
             </a>
-            <p className="text-gray-400 mt-2">Student & Technology Enthusiast</p>
+            <p className="text-gray-400 mt-2 font-raleway">Student & Technology Enthusiast</p>
           </div>
           
           <div className="mt-6 md:mt-0">
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 text-sm font-lora">
               © {currentYear} Suhas B S. All rights reserved.
             </p>
           </div>

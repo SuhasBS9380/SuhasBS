@@ -49,7 +49,7 @@ const Navbar = () => {
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <a href="#home" className="font-bold text-xl text-white">
-            Suhas<span className="text-highlight"> B S</span>
+            <span className="font-montserrat">Suhas</span><span className="text-highlight font-poppins"> B S</span>
           </a>
           
           {/* Desktop Navigation */}
@@ -58,7 +58,10 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-white transition-colors duration-300 text-sm"
+                className={cn(
+                  "transition-colors duration-300 text-sm",
+                  item.name === 'Home' ? "font-montserrat text-white" : "font-poppins text-gray-300 hover:text-white"
+                )}
               >
                 {item.name}
               </a>
@@ -76,10 +79,10 @@ const Navbar = () => {
         </div>
       </div>
       
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Navigation Menu - Fixed z-index issue */}
       <div 
         className={cn(
-          "fixed inset-0 z-40 bg-black/90 backdrop-blur-lg flex flex-col justify-start pt-20 items-center overflow-y-auto transition-all duration-500 ease-in-out md:hidden",
+          "fixed inset-0 z-50 bg-black/90 backdrop-blur-lg flex flex-col justify-start pt-20 items-center transition-all duration-500 ease-in-out md:hidden",
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
       >
@@ -93,11 +96,14 @@ const Navbar = () => {
         </button>
         
         <div className="flex flex-col items-center space-y-8 py-8 w-full">
-          {navItems.map((item) => (
+          {navItems.map((item, index) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-white text-2xl font-medium hover:text-highlight transition-colors duration-300"
+              className={cn(
+                "hover:text-highlight transition-colors duration-300",
+                index % 2 === 0 ? "text-white text-2xl font-montserrat font-medium" : "text-white text-2xl font-poppins"
+              )}
               onClick={() => setIsOpen(false)}
             >
               {item.name}

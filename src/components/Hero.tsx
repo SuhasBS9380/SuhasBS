@@ -40,7 +40,7 @@ const Hero = () => {
               </p>
               
               <div className="pt-4 opacity-0 animate-slideUp animate-delay-500">
-                <Button className="bg-highlight hover:bg-highlight-dark text-white rounded-full px-6 py-5 sm:px-8 sm:py-6 text-sm sm:text-base">
+                <Button className="bg-highlight hover:bg-highlight-dark text-white rounded-full px-6 py-5 sm:px-8 sm:py-6 text-sm sm:text-base font-poppins transition-all duration-300 transform hover:scale-105">
                   Get in touch <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>

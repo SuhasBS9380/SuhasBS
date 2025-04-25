@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -26,6 +27,9 @@ export default {
         montserrat: ['Montserrat', 'sans-serif'],
         'dancing-script': ['Dancing Script', 'cursive'],
         poppins: ['Poppins', 'sans-serif'],
+        playfair: ['Playfair Display', 'serif'],
+        raleway: ['Raleway', 'sans-serif'],
+        lora: ['Lora', 'serif'],
       },
       colors: {
         border: 'hsl(var(--border))',
@@ -122,3 +126,4 @@ export default {
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
