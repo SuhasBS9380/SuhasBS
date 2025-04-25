@@ -124,7 +124,15 @@ const Showcases = () => {
                 backgroundPosition: 'center',
               }}
             >
-              <div className="absolute inset-0 bg-black/50"></div>
+              <div className="absolute inset-0 bg-black/60"></div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                  {projects[activeIndex].title}
+                </h3>
+                <p className="text-gray-200 mb-6 max-w-md">
+                  {projects[activeIndex].description}
+                </p>
+              </div>
             </div>
           </div>
 
@@ -133,14 +141,6 @@ const Showcases = () => {
               <span className="inline-block px-3 py-1 rounded-full bg-highlight/10 text-highlight text-sm font-medium">
                 Project {activeIndex + 1}/{projects.length}
               </span>
-              
-              <h3 className="text-2xl md:text-3xl font-bold text-white">
-                {projects[activeIndex].title}
-              </h3>
-              
-              <p className="text-gray-300">
-                {projects[activeIndex].description}
-              </p>
               
               <div className="flex flex-wrap gap-2">
                 {projects[activeIndex].tags.map((tag, index) => (
@@ -160,7 +160,7 @@ const Showcases = () => {
                   rel="noopener noreferrer"
                 >
                   <Button 
-                    className="bg-highlight hover:bg-highlight-dark text-white transition-all duration-300 transform hover:scale-105 animate-pulse"
+                    className="bg-highlight hover:bg-highlight-dark text-white transition-all duration-300 transform hover:-translate-y-1"
                   >
                     Project Link
                   </Button>
