@@ -2,48 +2,55 @@
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const projects = [
   {
     id: 1,
     title: "Accessible and Inclusive",
     description: "A web application focused on creating accessible and inclusive digital experiences for all users.",
-    image: "https://placehold.co/600x400/111111/FFFFFF?text=Accessible+and+Inclusive",
+    image: "https://res.cloudinary.com/ddoiavjyy/image/upload/v1745600562/WhatsApp_Image_2025-04-25_at_22.32.35_5fb4f7ce_v7zhlf.jpg",
+    link: "https://github.com/SuhasBS9380/inclusive-accessio-hackthon",
     tags: ["Node.js", "React", "API", "HTML", "Tailwind CSS", "JavaScript"]
   },
   {
     id: 2,
-    title: "Image Deblurring Prism Project",
+    title: "Image Deblurring Project",
     description: "An AI-powered solution that uses machine learning techniques to restore and enhance blurry images.",
-    image: "https://placehold.co/600x400/111111/FFFFFF?text=Image+Deblurring",
+    image: "https://res.cloudinary.com/ddoiavjyy/image/upload/v1745600606/blurry_ih1kmh.jpg",
+    link: "https://github.com/SuhasBS9380/deblur",
     tags: ["TensorFlow", "Python", "AI Libraries"]
   },
   {
     id: 3,
     title: "E-Commerce Website (Offer Mania)",
     description: "A feature-rich e-commerce platform with special focus on promotional offers and user engagement.",
-    image: "https://placehold.co/600x400/111111/FFFFFF?text=Offer+Mania",
+    image: "https://res.cloudinary.com/ddoiavjyy/image/upload/v1745600511/Screenshot_2025-04-25_222520_hdegxt.png",
+    link: "https://github.com/SuhasBS9380/offermania",
     tags: ["React", "Node.js", "MongoDB", "Express"]
   },
   {
     id: 4,
     title: "Data Visualization Project",
     description: "Interactive data visualization tools for analyzing and presenting complex datasets in an intuitive manner.",
-    image: "https://placehold.co/600x400/111111/FFFFFF?text=Data+Visualization",
+    image: "https://res.cloudinary.com/ddoiavjyy/image/upload/v1745600561/WhatsApp_Image_2025-04-25_at_22.32.35_fde41c8c_fcmjrj.jpg",
+    link: "https://www.linkedin.com/posts/suhas-b-s-01500427a_datavisualization-python-dataanalysis-activity-7159455356362915841-ZhrH?utm_source=share&utm_medium=member_android&rcm=ACoAAEP8-xEBTKYFYpPWqUDHhEkuhjKSCuOfnEs",
     tags: ["Matplotlib", "Seaborn", "Python", "Flask"]
   },
   {
     id: 5,
-    title: "DSA LeetCode Problem Solving",
+    title: "DSA LeetCode Solutions",
     description: "A collection of algorithmic solutions to complex programming challenges, demonstrating problem-solving skills.",
-    image: "https://placehold.co/600x400/111111/FFFFFF?text=DSA+Solutions",
+    image: "https://res.cloudinary.com/ddoiavjyy/image/upload/v1745600509/Screenshot_2025-04-25_221827_g6747n.png",
+    link: "https://leetcode.com/u/Suhas_B_S/",
     tags: ["Python", "Java", "Data Structures", "Algorithms"]
   },
   {
     id: 6,
     title: "Constro Tech Interior Website",
     description: "A modern website for an interior design company with portfolio showcase and client interaction features.",
-    image: "https://placehold.co/600x400/111111/FFFFFF?text=Constro+Tech",
+    image: "https://res.cloudinary.com/ddoiavjyy/image/upload/v1745600511/Screenshot_2025-04-25_222852_y2cjji.png",
+    link: "https://github.com/SuhasBS9380/interior-vista-design",
     tags: ["Node.js", "HTML", "Render", "Hostinger", "JavaScript"]
   }
 ];
@@ -102,17 +109,22 @@ const Showcases = () => {
           </div>
         </div>
 
-        <div className={cn(
-          "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center transition-all duration-1000",
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        )}>
+        <div 
+          className={cn(
+            "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center transition-all duration-1000",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          )}
+        >
           <div>
-            <div className="glass-card p-2 rounded-xl overflow-hidden">
-              <img 
-                src={projects[activeIndex].image} 
-                alt={projects[activeIndex].title} 
-                className="w-full h-auto rounded-lg object-cover aspect-video"
-              />
+            <div 
+              className="glass-card p-2 rounded-xl overflow-hidden relative h-[300px] sm:h-[400px]"
+              style={{
+                backgroundImage: `url(${projects[activeIndex].image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <div className="absolute inset-0 bg-black/50"></div>
             </div>
           </div>
 
@@ -139,6 +151,20 @@ const Showcases = () => {
                     {tag}
                   </span>
                 ))}
+              </div>
+
+              <div className="pt-4">
+                <a 
+                  href={projects[activeIndex].link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Button 
+                    className="bg-highlight hover:bg-highlight-dark text-white transition-all duration-300 transform hover:scale-105 animate-pulse"
+                  >
+                    Project Link
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
