@@ -3,10 +3,12 @@ import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import Achievements from '@/components/Achievements';
 import Testimonials from '@/components/Testimonials';
 import Showcases from '@/components/Showcases';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import Resume from '@/components/Resume';
 
 const Index = () => {
   useEffect(() => {
@@ -41,10 +43,12 @@ const Index = () => {
     <div className="min-h-screen bg-black overflow-hidden">
       <Navbar />
       <main>
-        <Hero />
-        <About />
-        <Testimonials />
+  <Hero />
+  <About />
+  <Achievements />
+  <Testimonials />
         <Showcases />
+        <Resume />
         <Contact />
       </main>
       <Footer />

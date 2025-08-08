@@ -75,8 +75,8 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))'
         },
-        highlight: '#6366f1',
-        'highlight-dark': '#4f46e5',
+        highlight: '#f97316',
+        'highlight-dark': '#ea580c',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -111,6 +111,10 @@ export default {
         pulse: {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.5' }
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' }
         }
       },
       animation: {
@@ -120,7 +124,8 @@ export default {
         slideUp: 'slideUp 0.8s ease-out forwards',
         slideInRight: 'slideInRight 0.8s ease-out forwards',
         slideInLeft: 'slideInLeft 0.8s ease-out forwards',
-        pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+        pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        float: 'float 3s ease-in-out infinite'
       }
     }
   },

@@ -52,7 +52,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white">
-            Kind <span className="text-gradient">Words</span>
+            Kind <span className="text-highlight">Words</span>
           </h2>
         </div>
 
@@ -60,16 +60,16 @@ const Testimonials = () => {
           "max-w-4xl mx-auto transition-all duration-1000",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         )}>
-          <div className="relative glass-card rounded-2xl p-8 md:p-12">
+          <div className="relative bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 md:p-12">
             <div className="text-4xl text-highlight mb-6">"</div>
             
             <div className="min-h-[160px] flex flex-col justify-center">
-              <p className="text-lg md:text-xl text-white mb-8 italic">
+              <p className="text-lg md:text-xl text-white mb-8 italic leading-relaxed">
                 {testimonials[activeIndex].quote}
               </p>
               
               <div>
-                <p className="font-medium text-white">{testimonials[activeIndex].author}</p>
+                <p className="font-semibold text-white text-lg">{testimonials[activeIndex].author}</p>
                 <p className="text-gray-400">{testimonials[activeIndex].position}</p>
               </div>
             </div>

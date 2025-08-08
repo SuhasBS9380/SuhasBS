@@ -2,21 +2,60 @@
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
+import { Monitor, Cloud, Code, Trophy, Award, Users, Target, Star } from 'lucide-react';
 
-const skills = [
-  { name: "Python", icon: "🐍", color: "#8B5CF6" },
-  { name: "Java", icon: "☕", color: "#0EA5E9" },
-  { name: "JavaScript", icon: "📜", color: "#F97316" },
-  { name: "SQL", icon: "🗄️", color: "#9b87f5" },
-  { name: "Problem Solving", icon: "🧩", color: "#D946EF" },
-  { name: "Team Leadership", icon: "👥", color: "#7E69AB" },
+const services = [
+  {
+    title: "Website Development",
+    description: "Creating responsive and modern web applications",
+    icon: <Monitor className="h-8 w-8 text-highlight" />
+  },
+  {
+    title: "Website Hosting",
+    description: "Deploying and maintaining web applications",
+    icon: <Cloud className="h-8 w-8 text-highlight" />
+  },
+  {
+    title: "Complex Web Application Development",
+    description: "Building robust and scalable web applications",
+    icon: <Code className="h-8 w-8 text-highlight" />
+  }
 ];
 
-const tools = [
-  { name: "VS Code", icon: "💻", color: "#0EA5E9" },
-  { name: "GitHub", icon: "📁", color: "#8B5CF6" },
-  { name: "Lovable", icon: "🛠️", color: "#F97316" },
-  { name: "AI Tools", icon: "🤖", color: "#D946EF" },
+const stats = [
+  { number: "10+", label: "Completed Projects" },
+  { number: "2+", label: "Internship Experience" }
+];
+
+const achievements = [
+  {
+    title: "100+ LeetCode Problems",
+    subtitle: "Algorithmic Excellence",
+    description: "Enhanced problem-solving skills",
+    icon: <Trophy className="h-8 w-8" />,
+    delay: 0
+  },
+  {
+    title: "Team Leadership",
+    subtitle: "Samsung Prism Internship",
+    description: "Managed team achieving project goals",
+    icon: <Users className="h-8 w-8" />,
+    delay: 0.2
+  },
+  {
+    title: "Hackathon Participant",
+    subtitle: "Multiple Events",
+    description: "Rapid development experience",
+    icon: <Award className="h-8 w-8" />,
+    delay: 0.4
+  },
+  {
+    title: "Academic Excellence",
+    subtitle: "94% Class XII",
+    description: "Strong academic foundation",
+    icon: <Target className="h-8 w-8" />,
+    delay: 0.6
+  }
 ];
 
 const About = () => {
@@ -67,17 +106,16 @@ const About = () => {
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white">
-            About <span className="text-gradient">Me</span>
+            About <span className="text-highlight">me</span>
           </h2>
         </div>
 
-        <div className="flex flex-col-reverse sm:flex-row gap-12 items-start">
+        <div className="flex flex-col-reverse lg:flex-row gap-12 items-start">
           <div className={cn(
-            "w-full sm:w-3/5 transition-all duration-1000 transform",
+            "w-full lg:w-3/5 transition-all duration-1000 transform",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           )}>
-            <h3 className="text-2xl font-semibold text-white mb-6">Who I Am</h3>
-            <div className="space-y-4 text-gray-300">
+            <div className="space-y-6 text-gray-300">
               <p>
                 With a passion for exploring the dynamic intersection of technology and creativity, I am currently advancing my skills as a student at the Cambridge Institute of Technology, Bangalore. This institution is renowned for cultivating the next generation of tech innovators.
               </p>
@@ -87,17 +125,46 @@ const About = () => {
               <p>
                 I thrive in environments that challenge my problem-solving abilities and allow me to lead teams towards achieving common goals. My natural inclination for leadership and collaboration enables me to transform complex challenges into streamlined, effective solutions.
               </p>
-              <p>
-                As I continue to expand my knowledge and seek new opportunities, I am eager to apply my skills in innovative ways that contribute to growth and excellence. I am always open to connecting with like-minded individuals and exploring potential projects or collaborations where my expertise can add value.
-              </p>
             </div>
+
+            {/* Services Section */}
+            <div className="mt-12">
+              <h3 className="text-2xl font-semibold text-white mb-8">Services</h3>
+              {isVisible && (
+                <motion.div 
+                  className="grid grid-cols-1 md:grid-cols-3 gap-6"
+                  initial="hidden"
+                  animate="visible"
+                  variants={containerVariants}
+                >
+                  {services.map((service, index) => (
+                    <motion.div 
+                      key={index}
+                      variants={itemVariants}
+                      className="service-card"
+                    >
+                      <div className="mb-4">
+                        {service.icon}
+                      </div>
+                      <h4 className="text-lg font-semibold text-white mb-2">
+                        {service.title}
+                      </h4>
+                      <p className="text-gray-400 text-sm">
+                        {service.description}
+                      </p>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              )}
+            </div>
+
           </div>
 
           <div className={cn(
-            "w-full sm:w-2/5 transition-all duration-1000 delay-300 transform",
+            "w-full lg:w-2/5 transition-all duration-1000 delay-300 transform",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           )}>
-            <div className="relative w-full max-w-[250px] mx-auto aspect-square rounded-full bg-black border-4 border-highlight/20 flex items-center justify-center overflow-hidden">
+            <div className="relative w-full max-w-[300px] mx-auto aspect-square rounded-full bg-black border-4 border-highlight/20 flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-b from-black via-highlight/5 to-black/80"></div>
               <img 
                 src="/lovable-uploads/1bd83404-309d-45b9-888b-a40c0e59b6fd.png" 
@@ -105,75 +172,34 @@ const About = () => {
                 className="w-full h-full object-cover relative z-10"
               />
             </div>
+
+            {/* Stats Section */}
+            <div className="mt-12">
+              {isVisible && (
+                <motion.div 
+                  className="grid grid-cols-2 gap-6"
+                  initial="hidden"
+                  animate="visible"
+                  variants={containerVariants}
+                >
+                  {stats.map((stat, index) => (
+                    <motion.div 
+                      key={index}
+                      variants={itemVariants}
+                      className="stat-card"
+                    >
+                      <div className="text-3xl font-bold text-highlight mb-2">
+                        {stat.number}
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        {stat.label}
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              )}
+            </div>
           </div>
-        </div>
-
-        <div className="mt-16">
-          <h3 className="text-2xl font-semibold text-white mb-8">My Skills</h3>
-          {isVisible && (
-            <motion.div 
-              className="flex flex-wrap gap-4"
-              initial="hidden"
-              animate="visible"
-              variants={containerVariants}
-            >
-              {skills.map((skill, index) => (
-                <motion.div 
-                  key={index}
-                  variants={itemVariants}
-                  className="glass-card px-4 py-3 rounded-full flex items-center gap-2"
-                  style={{ borderLeft: `3px solid ${skill.color}` }}
-                >
-                  <span className="text-2xl">{skill.icon}</span>
-                  <span className="text-white font-medium">{skill.name}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-          )}
-        </div>
-
-        <div className="mt-12">
-          <h3 className="text-2xl font-semibold text-white mb-6">Tools</h3>
-          {isVisible && (
-            <motion.div 
-              className="flex flex-wrap gap-4"
-              initial="hidden"
-              animate="visible"
-              variants={containerVariants}
-            >
-              {tools.map((tool, index) => (
-                <motion.div 
-                  key={index}
-                  variants={itemVariants}
-                  className="glass-card px-4 py-3 rounded-full flex items-center gap-2"
-                  style={{ borderLeft: `3px solid ${tool.color}` }}
-                >
-                  <span className="text-2xl">{tool.icon}</span>
-                  <span className="text-white font-medium">{tool.name}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-          )}
-        </div>
-
-        <div className="mt-12">
-          <h3 className="text-2xl font-semibold text-white mb-6">Projects</h3>
-          {isVisible && (
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="glass-card p-6 rounded-xl"
-            >
-              <div className="flex flex-col space-y-2">
-                <span className="text-highlight font-medium">10+ Projects Completed</span>
-                <p className="text-gray-300">Including web applications, data analysis, and AI implementations</p>
-                <p className="text-gray-400 text-sm mt-2">
-                  I've built a strong foundation through numerous personal and academic projects that demonstrate my technical abilities and problem-solving skills.
-                </p>
-              </div>
-            </motion.div>
-          )}
         </div>
       </div>
     </section>

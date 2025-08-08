@@ -24,7 +24,7 @@ const socialLinks = [
   },
   {
     name: 'GitHub',
-    url: 'https://github.com/SuhasBS9380',
+    url: 'https://github.com/suhasbs',
     icon: <Github className="h-5 w-5" />,
     ariaLabel: 'GitHub Profile'
   }
@@ -55,7 +55,7 @@ const Contact = () => {
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white">
-            Get in <span className="text-gradient">Touch</span>
+            Get in <span className="text-highlight">Touch</span>
           </h2>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
             Interested in working together or have a question? Feel free to reach out!
@@ -63,38 +63,44 @@ const Contact = () => {
         </div>
 
         <div className={cn(
-          "grid grid-cols-1 transition-all duration-1000",
+          "transition-all duration-1000",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         )}>
-          <div className="glass-card rounded-xl p-8 max-w-3xl mx-auto w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="max-w-4xl mx-auto">
+            {/* Social Links */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {socialLinks.map((link, index) => (
                 <a 
                   key={index}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between px-6 py-4 border border-gray-800 rounded-lg hover:border-gray-700 hover:bg-gray-900/50 transition-all"
+                  className="group flex items-center justify-between p-6 bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-lg hover:border-highlight/50 hover:bg-gray-800/50 transition-all duration-300"
                   aria-label={link.ariaLabel}
                 >
-                  <div className="flex items-center space-x-3">
-                    {link.icon}
-                    <span className="text-white">{link.name}</span>
+                  <div className="flex items-center space-x-4">
+                    <div className="text-highlight group-hover:scale-110 transition-transform duration-300">
+                      {link.icon}
+                    </div>
+                    <span className="text-white font-medium">{link.name}</span>
                   </div>
-                  <ExternalLink className="h-4 w-4 text-gray-500" />
+                  <ExternalLink className="h-4 w-4 text-gray-500 group-hover:text-highlight transition-colors" />
                 </a>
               ))}
             </div>
 
-            <div className="my-8 border-t border-gray-800"></div>
-
-            <a 
-              href="mailto:suhasbs229@gmail.com"
-              className="flex items-center justify-center space-x-2 bg-highlight hover:bg-highlight-dark text-white rounded-lg px-6 py-4 transition-all w-full"
-            >
-              <Mail className="h-5 w-5" />
-              <span>Send Email</span>
-            </a>
+            {/* Email Section */}
+            <div className="text-center">
+              <div className="inline-block">
+                <a 
+                  href="mailto:suhasbs229@gmail.com"
+                  className="inline-flex items-center space-x-3 bg-highlight hover:bg-highlight-dark text-white rounded-lg px-8 py-4 text-lg font-medium transition-all duration-300 transform hover:scale-105"
+                >
+                  <Mail className="h-5 w-5" />
+                  <span>Send Email</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

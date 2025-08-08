@@ -9,10 +9,10 @@ const Footer = () => {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div>
-            <a href="#home" className="font-bold text-xl text-white">
-              <span className="font-playfair">Suhas</span><span className="font-dancing-script text-highlight"> B S</span>
+            <a href="#home" className="font-bold text-2xl text-white">
+              <span className="font-montserrat">Suhas</span><span className="text-highlight font-poppins"> B S</span>
             </a>
-            <p className="text-gray-400 mt-2 font-raleway">Student & Technology Enthusiast</p>
+            <p className="text-gray-400 mt-2 font-raleway">Software Developer</p>
           </div>
           
           <div className="mt-6 md:mt-0">

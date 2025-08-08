@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const projects = [
@@ -89,7 +89,7 @@ const Showcases = () => {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex justify-between items-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white">
-            <span className="text-gradient">Showcases</span>
+            <span className="text-highlight">Projects</span>
           </h2>
           <div className="flex space-x-2">
             <button 
@@ -111,46 +111,63 @@ const Showcases = () => {
 
         <div 
           className={cn(
-            "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center transition-all duration-1000",
+            "transition-all duration-1000",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           )}
         >
-          <div>
-            <div 
-              className="glass-card p-2 rounded-xl overflow-hidden relative h-[300px] sm:h-[400px]"
-              style={{
-                backgroundImage: `url(${projects[activeIndex].image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            >
-              <div className="absolute inset-0 bg-black/60"></div>
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Project Image */}
+            <div className="relative">
+              <div 
+                className="w-full h-[400px] rounded-xl overflow-hidden relative"
+                style={{
+                  backgroundImage: `url(${projects[activeIndex].image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              >
+                <div className="absolute inset-0 bg-black/40"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                      {projects[activeIndex].title}
+                    </h3>
+                    <p className="text-gray-200 mb-6 max-w-md mx-auto">
+                      {projects[activeIndex].description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Project Details */}
+            <div className="space-y-8">
+              <div>
+                <span className="inline-block px-3 py-1 rounded-full bg-highlight/10 text-highlight text-sm font-medium mb-6">
+                  Project {activeIndex + 1}/{projects.length}
+                </span>
+                
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                   {projects[activeIndex].title}
                 </h3>
-                <p className="text-gray-200 mb-6 max-w-md">
+                
+                <p className="text-gray-300 mb-6">
                   {projects[activeIndex].description}
                 </p>
               </div>
-            </div>
-          </div>
 
-          <div>
-            <div className="space-y-6">
-              <span className="inline-block px-3 py-1 rounded-full bg-highlight/10 text-highlight text-sm font-medium">
-                Project {activeIndex + 1}/{projects.length}
-              </span>
-              
-              <div className="flex flex-wrap gap-2">
-                {projects[activeIndex].tags.map((tag, index) => (
-                  <span 
-                    key={index} 
-                    className="px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-sm"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-4">Technologies Used</h4>
+                <div className="flex flex-wrap gap-2">
+                  {projects[activeIndex].tags.map((tag, index) => (
+                    <span 
+                      key={index} 
+                      className="px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-sm border border-gray-700"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
 
               <div className="pt-4">
@@ -162,7 +179,7 @@ const Showcases = () => {
                   <Button 
                     className="bg-highlight hover:bg-highlight-dark text-white transition-all duration-300 transform hover:-translate-y-1"
                   >
-                    Project Link
+                    View Project <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
                 </a>
               </div>
